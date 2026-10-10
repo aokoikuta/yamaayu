@@ -1,0 +1,86 @@
+/* ページ全体 */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f0e6;
+  font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+/* 当たりのときだけ付くクラス：背景画像を画面いっぱいに表示 */
+body.hit {
+  background-image: url("images_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 中央の箱 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
+}
+
+/* テキスト表示エリア（背景画像の上でも読めるよう白い背景を付ける） */
+.message {
+  margin: 0;
+  min-width: 280px;
+  max-width: 90vw;
+  padding: 20px 28px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* 連続回避記録（背景画像の上でも読めるよう白い背景を付ける） */
+.streak {
+  margin: 0;
+  padding: 4px 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  font-size: 1.5rem;
+}
+
+/* 0回（リセット時）は青色 */
+.streak.zero {
+  color: #1e5bd8;
+}
+
+/* 3回以上は赤字・太字 */
+.streak.danger {
+  color: #d01c1c;
+  font-weight: bold;
+}
+
+/* 当たりのときだけ、テキストエリアと連続回避記録を太字・少し大きく */
+body.hit .message {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+body.hit .streak {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* ボタン */
+.button {
+  padding: 12px 32px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #8b2e16;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #a8391c;
+}
